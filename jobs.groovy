@@ -7,7 +7,7 @@ job("self_imagebuilder1"){
                 scm("* * * * *")
                 
         }
-         label("ec1")
+         //label("ec1")
 
 
         steps {
