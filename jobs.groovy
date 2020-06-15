@@ -1,4 +1,4 @@
-job("self_imagebuilder"){
+job("self_imagebuilder1"){
         description("this job will copy the file in you os version and push image to docker hub")
         scm {
                  github('guptaadi123/dockerauto' , 'master')
@@ -19,12 +19,12 @@ sudo docker push adity12/http''')
       }
 }
 
-job("self_pod_managment"){
+job("self_pod_managment1"){
         description("this will creat deploymet for website and expose deployment")
         
         triggers {
         upstream {
-    upstreamProjects("self_imagebuilder")
+    upstreamProjects("self_imagebuilder1")
     threshold("Fail")
         }
         }
@@ -58,12 +58,12 @@ fi ''')
 }
 
 
-job("self_finaltesting"){
+job("self_finaltesting1"){
         description("this job will test the env")
         
         triggers {
                 upstream {
-    upstreamProjects("self_pod_managment")
+    upstreamProjects("self_pod_managment1")
     threshold("Fail")
    } 
         }
