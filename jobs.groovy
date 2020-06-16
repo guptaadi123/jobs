@@ -7,7 +7,7 @@ job("self_imagebuilder1"){
                 scm("* * * * *")
                 
         }
-         //label("ec1")
+         label("s1")
 
 
         steps {
@@ -28,6 +28,7 @@ job("self_pod_managment1"){
     threshold("Fail")
         }
         }
+        label("s1")
 
         steps {
         shell('''if sudo kubectl get deployment | grep myweb
@@ -67,7 +68,7 @@ job("self_finaltesting1"){
     threshold("Fail")
    } 
         }
-        
+        label("s1")
 
 
         steps {
